@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Calculator {
     @GetMapping("{operation}/{num1}/{num2}")
-    public float sum(@PathVariable int num1 , @PathVariable int num2 , @PathVariable String operation){
+    public float sum(@PathVariable float num1 , @PathVariable float num2 , @PathVariable String operation){
 
         return switch (operation) {
             case "sum" -> num1 + num2;
@@ -16,7 +16,7 @@ public class Calculator {
 
             case "sub" -> num1 - num2;
 
-            case "div" -> (float) num1 / num2;
+            case "div" ->  num1 / num2;
 
             default -> -1;
         };

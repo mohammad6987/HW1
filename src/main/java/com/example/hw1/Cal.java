@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Cal {
     @GetMapping("{operation}/{num1}/{num2}")
     public float sum(@PathVariable int num1 , @PathVariable int num2 , @PathVariable String operation){
+
         return switch (operation) {
             case "sum" -> num1 + num2;
 
